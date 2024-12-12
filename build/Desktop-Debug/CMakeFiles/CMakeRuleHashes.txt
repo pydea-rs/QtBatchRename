@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+352c511c4cc6619ee3d089b34bf588c2 CMakeFiles/batch-rename_autogen
+07a821e56e014b17b643fa79d3c30378 batch-rename_autogen/timestamp
