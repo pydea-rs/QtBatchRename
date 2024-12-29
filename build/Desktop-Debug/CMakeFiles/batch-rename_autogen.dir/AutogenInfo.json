@@ -80,6 +80,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/kali/thcpp/c++/qt/batch-rename/batch-modifier.h",
+			"MU",
+			"EWIEGA46WW/moc_batch-modifier.cpp",
+			null
+		],
+		[
 			"/home/kali/thcpp/c++/qt/batch-rename/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -137,6 +143,7 @@
 	"SETTINGS_FILE" : "/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/batch-rename_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/kali/thcpp/c++/qt/batch-rename/batch-modifier.cpp", "MU", null ],
 		[ "/home/kali/thcpp/c++/qt/batch-rename/main.cpp", "MU", null ],
 		[ "/home/kali/thcpp/c++/qt/batch-rename/mainwindow.cpp", "MU", null ]
 	],

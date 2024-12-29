@@ -8,11 +8,13 @@ class BatchModifier
 private:
     const QString directoryPath;
 public:
-    BatchModifier(const QString &directoryPath): directoryPath(directoryPath) {};
+    BatchModifier(const QString &directoryPath): directoryPath(directoryPath) {}
     QStringList fetchFilenames() const;
 
-    QMap<QString, QString> batchAppend(const QString &suffix) const;
+    QMap<QString, QString> batchExtend(const QString &text, bool prepend) const;
     QString getAppendedFilename(const QString &filename, const QString &suffix) const;
+
+    QString getPrependedFilename(const QString &prefix, const QString &filename) const;
 
 };
 

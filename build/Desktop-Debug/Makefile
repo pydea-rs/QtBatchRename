@@ -200,6 +200,30 @@ batch-rename_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/batch-rename_autogen.dir/build.make CMakeFiles/batch-rename_autogen.dir/build
 .PHONY : batch-rename_autogen/fast
 
+batch-modifier.o: batch-modifier.cpp.o
+.PHONY : batch-modifier.o
+
+# target to build an object file
+batch-modifier.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/batch-rename.dir/build.make CMakeFiles/batch-rename.dir/batch-modifier.cpp.o
+.PHONY : batch-modifier.cpp.o
+
+batch-modifier.i: batch-modifier.cpp.i
+.PHONY : batch-modifier.i
+
+# target to preprocess a source file
+batch-modifier.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/batch-rename.dir/build.make CMakeFiles/batch-rename.dir/batch-modifier.cpp.i
+.PHONY : batch-modifier.cpp.i
+
+batch-modifier.s: batch-modifier.cpp.s
+.PHONY : batch-modifier.s
+
+# target to generate assembly for a file
+batch-modifier.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/batch-rename.dir/build.make CMakeFiles/batch-rename.dir/batch-modifier.cpp.s
+.PHONY : batch-modifier.cpp.s
+
 batch-rename_autogen/mocs_compilation.o: batch-rename_autogen/mocs_compilation.cpp.o
 .PHONY : batch-rename_autogen/mocs_compilation.o
 
@@ -287,6 +311,9 @@ help:
 	@echo "... batch-rename_autogen"
 	@echo "... batch-rename_autogen_timestamp_deps"
 	@echo "... batch-rename"
+	@echo "... batch-modifier.o"
+	@echo "... batch-modifier.i"
+	@echo "... batch-modifier.s"
 	@echo "... batch-rename_autogen/mocs_compilation.o"
 	@echo "... batch-rename_autogen/mocs_compilation.i"
 	@echo "... batch-rename_autogen/mocs_compilation.s"

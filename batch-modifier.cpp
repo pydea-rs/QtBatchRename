@@ -11,7 +11,7 @@ QStringList BatchModifier::fetchFilenames() const {
     return dir.entryList(QDir::Files);
 }
 
-QMap<QString, QString> BatchModifier::batchAppend(const QString &suffix) const {
+QMap<QString, QString> BatchModifier::batchExtend(const QString &text, bool prepend) const {
     const QStringList filenames = this->fetchFilenames();
     QMap<QString, QString> changes;
 
@@ -19,7 +19,8 @@ QMap<QString, QString> BatchModifier::batchAppend(const QString &suffix) const {
         QFile file(filename);
         if(!file.exists())
             continue;
-        const QString newFilename = this->getAppendedFilename(file.fileName(), suffix);
+        const QString newFilename = prepend ? this->getPrependedFilename(text, file.fileName())
+                                            : this->getAppendedFilename(file.fileName(), suffix);
         file.rename(newFilename);
         changes.insert(filename, newFilename);
     }

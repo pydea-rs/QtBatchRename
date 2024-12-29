@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/batch-rename_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/batch-rename_autogen.dir/ParseCache.txt"
   "batch-rename_autogen"
+  "CMakeFiles/batch-rename.dir/batch-modifier.cpp.o"
+  "CMakeFiles/batch-rename.dir/batch-modifier.cpp.o.d"
   "CMakeFiles/batch-rename.dir/batch-rename_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/batch-rename.dir/batch-rename_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/batch-rename.dir/main.cpp.o"
