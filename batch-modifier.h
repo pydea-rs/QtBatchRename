@@ -16,6 +16,8 @@ public:
 
     QString getPrependedFilename(const QString &prefix, const QString &filename) const;
 
+    QString BatchModifier::getReplacedFilename(QString filename, const QString &oldPhrase, const QString &newPhrase) const;
+    QMap<QString, QString> BatchModifier::batchReplace(const QString &oldPhrase, const QString &newPhrase) const;
 };
 
 #endif // BATCHMODIFIER_H
