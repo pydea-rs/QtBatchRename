@@ -6,20 +6,167 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>887</width>
+    <height>636</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="inputGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>871</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>INPUT</string>
+    </property>
+    <widget class="QToolButton" name="btnOperationMode">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>70</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtFolderPath">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>731</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="whatsThis">
+      <string>Target folder path</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Target Folder ...</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnSelectFolder">
+     <property name="geometry">
+      <rect>
+       <x>770</x>
+       <y>30</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>OpenHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 57 10pt &quot;Ubuntu Sans&quot;;
+background-color: rgb(192, 97, 203);
+selection-color: rgb(97, 53, 131);
+border-color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Browse</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnApply">
+     <property name="geometry">
+      <rect>
+       <x>770</x>
+       <y>70</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>OpenHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 57 10pt &quot;Ubuntu Sans&quot;;
+border-color: rgb(0, 0, 0);
+background-color: rgb(38, 162, 105);
+selection-color: rgb(143, 240, 164);</string>
+     </property>
+     <property name="text">
+      <string>Apply!</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtPartialText">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="whatsThis">
+      <string>Text to be appended/prepended/Text to be replaced on original filename.,,</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Extending Text | Replacing Text</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtSubstitute">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>70</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="whatsThis">
+      <string>Target folder path</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>This Will Replace Your Specified Text</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>750</x>
+       <y>20</y>
+       <width>21</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>887</width>
      <height>22</height>
     </rect>
    </property>

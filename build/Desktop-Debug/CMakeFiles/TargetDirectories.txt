@@ -1,9 +1,0 @@
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/batch-rename.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/list_install_components.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/install.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/install/local.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/install/strip.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/batch-rename_autogen_timestamp_deps.dir
-/home/kali/thcpp/c++/qt/batch-rename/build/Desktop-Debug/CMakeFiles/batch-rename_autogen.dir
