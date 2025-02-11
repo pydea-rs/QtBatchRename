@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->operationMode = OperationMode::SUBSTITUE;
+    this->operationMode = OperationMode::SUBSTITUTE;
     this->changeOperationMode();
 }
 
@@ -42,7 +42,7 @@ void MainWindow::changeOperationMode() {
         ui->btnOperationMode->setStyleSheet("QToolButton { background-color: red; }");
         break;
     }
-    ui->txtSubstitute->setEnabled(this->operationMode == OperationMode::SUBSTITUE);
+    ui->txtSubstitute->setEnabled(this->operationMode == OperationMode::SUBSTITUTE);
 }
 
 void MainWindow::on_btnApply_clicked()
@@ -57,7 +57,7 @@ void MainWindow::on_btnApply_clicked()
         manager.batchExtend(ui->txtPartialText->text(), this->operationMode == OperationMode::PREPEND);
         QMessageBox::information(this, "Success", "Applied Successfully!");
         break;
-    case OperationMode::SUBSTITUE:
+    case OperationMode::SUBSTITUTE:
         manager.batchReplace(ui->txtPartialText->text(), ui->txtSubstitute->text());
         QMessageBox::information(this, "Success", "Applied Successfully!");
         break;

@@ -14,7 +14,7 @@ QT_END_NAMESPACE
 enum OperationMode {
     PREPEND = 0,
     APPEND,
-    SUBSTITUE
+    SUBSTITUTE
 };
 
 class MainWindow : public QMainWindow
