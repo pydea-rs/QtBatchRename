@@ -2,7 +2,7 @@
 #include <QDir>
 #include <QFile>
 #include <QMap>
-
+#include <QDebug>
 
 QStringList BatchModifier::fetchFilenames() const {
     QDir dir(this->directoryPath);
@@ -16,7 +16,7 @@ QMap<QString, QString> BatchModifier::batchExtend(const QString &text, bool prep
     QMap<QString, QString> changes;
 
     for (const auto& filename: filenames) {
-        QFile file(filename);
+        QFile file(this->directoryPath + "/" + filename);
         if(!file.exists())
             continue;
         const QString newFilename = prepend ? this->getPrependedFilename(text, file.fileName())
@@ -32,7 +32,7 @@ QMap<QString, QString> BatchModifier::batchReplace(const QString &oldPhrase, con
     QMap<QString, QString> changes;
 
     for (const auto& filename: filenames) {
-        QFile file(filename);
+        QFile file(this->directoryPath + "/" + filename);
         if(!file.exists())
             continue;
         const QString newFilename = this->getReplacedFilename(file.fileName(), oldPhrase, newPhrase);
@@ -44,7 +44,7 @@ QMap<QString, QString> BatchModifier::batchReplace(const QString &oldPhrase, con
 
 QString BatchModifier::getAppendedFilename(const QString &filename, const QString &suffix) const {
     unsigned short oldNameLength = filename.length();
-    for(unsigned short int i = oldNameLength - 1; i > 0; i++) {
+    for(unsigned short int i = oldNameLength - 1; i >= 0; i--) {
         if(filename[i] == '.') {
             return filename.left(i) + suffix + filename.right(oldNameLength - i);
         }
@@ -54,9 +54,9 @@ QString BatchModifier::getAppendedFilename(const QString &filename, const QStrin
 
 QString BatchModifier::getPrependedFilename(const QString &prefix, const QString &filename) const {
     unsigned short oldNameLength = filename.length();
-    for(unsigned short int i = oldNameLength - 1; i > 0; i++) {
+    for(unsigned short int i = oldNameLength - 1; i >= 0; i--) {
         if(filename[i] == '/') {
-            return filename.left(i) + prefix + filename.right(oldNameLength - i);
+            return filename.left(i + 1) + prefix + filename.right(oldNameLength - i - 1);
         }
     }
     return prefix + filename;
@@ -64,7 +64,7 @@ QString BatchModifier::getPrependedFilename(const QString &prefix, const QString
 
 QString BatchModifier::getReplacedFilename(QString filename, const QString &oldPhrase, const QString &newPhrase) const {
     unsigned short oldNameLength = filename.length();
-    for(unsigned short int i = oldNameLength - 1; i > 0; i++) {
+    for(unsigned short int i = oldNameLength - 1; i >= 0; i--) {
         if(filename[i] == '/') {
             return filename.left(i) + filename.right(oldNameLength - i).replace(oldPhrase, newPhrase, Qt::CaseInsensitive);
         }

@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QFileDialog>
+#include "batch-modifier.h"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -45,7 +47,24 @@ void MainWindow::changeOperationMode() {
 
 void MainWindow::on_btnApply_clicked()
 {
-    // TODO:
+    BatchModifier manager(this->ui->txtFolderPath->text());
+    switch(this->operationMode) {
+    // TODO: Add error handling esp on input mismatch!
+
+    // TODO: It seems that Qt entryList func returns short filename; So prepend and replace functions could be simpler
+    case OperationMode::PREPEND:
+    case OperationMode::APPEND:
+        manager.batchExtend(ui->txtPartialText->text(), this->operationMode == OperationMode::PREPEND);
+        QMessageBox::information(this, "Success", "Applied Successfully!");
+        break;
+    case OperationMode::SUBSTITUE:
+        manager.batchReplace(ui->txtPartialText->text(), ui->txtSubstitute->text());
+        QMessageBox::information(this, "Success", "Applied Successfully!");
+        break;
+    default:
+        QMessageBox::critical(this, "Error!", "Invalid Operation! Please select operation properly!");
+        break;
+    }
 }
 
 void MainWindow::on_btnOperationMode_clicked()
