@@ -7,8 +7,11 @@
 QStringList BatchModifier::fetchFilenames() const {
     QDir dir(this->directoryPath);
     if(!dir.exists())
-        throw new std::invalid_argument("No such directory!");
-    return dir.entryList(QDir::Files);
+        throw std::invalid_argument("No such directory!");
+    const auto contents = dir.entryList(QDir::Files);
+    if(!contents.length())
+        throw std::invalid_argument("Selected directory doesn\'t contain any file to modify!");
+    return contents;
 }
 
 QMap<QString, QString> BatchModifier::batchExtend(const QString &text, bool prepend) const {
@@ -70,4 +73,14 @@ QString BatchModifier::getReplacedFilename(QString filename, const QString &oldP
         }
     }
     return filename.replace(oldPhrase, newPhrase, Qt::CaseInsensitive);
+}
+
+QString BatchModifier::getShortFilename(const QString filename) {
+    unsigned short length = filename.length();
+    for(unsigned short int i = length - 1; i >= 0; i--) {
+        if(filename[i] == '/') {
+            return filename.right(length - i - 1);
+        }
+    }
+    return filename;
 }
