@@ -76,15 +76,19 @@ void MainWindow::on_btnSelectFolder_clicked() {
 
 void MainWindow::updateCurrentPathContents() {
     BatchModifier manager(this->ui->txtFolderPath->text());
-    const auto contents = manager.fetchFilenames();
-    ui->currentPathContentList->clear();
-    QFileIconProvider iconProvider;
-//    ui->currentPathContentList->setIconSize(QSize(DEFAULT_ICON_WIDTH, DEFAULT_ICON_HEIGHT));
-    for(const auto &item: contents) {
-        QListWidgetItem *itemView = new QListWidgetItem(
-            resizeIcon(iconProvider.icon(QFileInfo(item))), item
-        );
-        ui->currentPathContentList->addItem(itemView);
+    try {
+        const auto contents = manager.fetchFilenames();
+        ui->currentPathContentList->clear();
+        QFileIconProvider iconProvider;
+    //    ui->currentPathContentList->setIconSize(QSize(DEFAULT_ICON_WIDTH, DEFAULT_ICON_HEIGHT));
+        for(const auto &item: contents) {
+            QListWidgetItem *itemView = new QListWidgetItem(
+                resizeIcon(iconProvider.icon(QFileInfo(item))), item
+            );
+            ui->currentPathContentList->addItem(itemView);
+        }
+    } catch(const std::invalid_argument& ex) {
+        QMessageBox::critical(this, "Error", ex.what());
     }
 }
 
